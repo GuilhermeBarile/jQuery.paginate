@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <title>jQuery.paginator</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="jquery.paginate.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css"/>
+    <style type="text/css">
+        li.active { background-color: red; }
+    </style>
+</head>
+<body>
+<div id="data1" class="with-pagination">
+    <div>
+        Element1
+    </div>
+    <div>
+        Element2
+    </div>
+    <div>
+        Element3
+    </div>
+    <div>
+        Element4
+    </div>
+    <div>
+        Element5
+    </div>
+    <div>
+        Element6
+    </div>
+    <div>
+        Element7
+    </div>
+    <div>
+        Element8
+    </div>
+    <div>
+        Element9
+    </div>
+</div>
+<div id="controller1"></div>
+<hr/>
+<div id="controller2-1" class="pagination"></div>
+<div id="data2" class="with-pagination">
+    <div>
+        Element1
+    </div>
+    <div>
+        Element2
+    </div>
+    <div>
+        Element3
+    </div>
+    <div>
+        Element4
+    </div>
+    <div>
+        Element5
+    </div>
+    <div>
+        Element6
+    </div>
+    <div>
+        Element7
+    </div>
+    <div>
+        Element8
+    </div>
+    <div>
+        Element9
+    </div>
+    <div>
+        Element10
+    </div>
+</div>
+<div id="controller2-2" class="pagination"></div>
+<script type="text/javascript">
+    jQuery(function($) {
+        // Controller will be attached to first element only
+        $('.with-pagination').paginate({'per_page': 3, 'controller': '#controller1'});
+
+        // Load controller manually
+        $('#controller2-1').append($('#data2').paginate('controller'));
+        $('#controller2-2').append($('#data2').paginate('controller'));
+    });
+</script>
+</body>
+</html>
